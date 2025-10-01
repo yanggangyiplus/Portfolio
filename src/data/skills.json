@@ -1,0 +1,39 @@
+[
+  {
+    "category": "Frontend Development",
+    "skills": [
+      { "name": "React / Next.js", "level": 95 },
+      { "name": "TypeScript", "level": 90 },
+      { "name": "HTML / CSS", "level": 95 },
+      { "name": "Tailwind CSS", "level": 90 },
+      { "name": "JavaScript", "level": 92 }
+    ]
+  },
+  {
+    "category": "Design & UI/UX",
+    "skills": [
+      { "name": "Figma", "level": 85 },
+      { "name": "Adobe XD", "level": 75 },
+      { "name": "Responsive Design", "level": 90 },
+      { "name": "Design Systems", "level": 88 }
+    ]
+  },
+  {
+    "category": "Tools & Workflow",
+    "skills": [
+      { "name": "Git / GitHub", "level": 90 },
+      { "name": "VS Code", "level": 95 },
+      { "name": "CI/CD", "level": 80 },
+      { "name": "Webpack / Vite", "level": 82 }
+    ]
+  },
+  {
+    "category": "Backend & Databases",
+    "skills": [
+      { "name": "Node.js", "level": 75 },
+      { "name": "REST APIs", "level": 85 },
+      { "name": "PostgreSQL", "level": 70 },
+      { "name": "Firebase", "level": 80 }
+    ]
+  }
+]

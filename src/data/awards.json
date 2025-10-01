@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "Best Frontend Developer of the Year",
+    "type": "award",
+    "organization": "Tech Innovators Inc.",
+    "period": "2023",
+    "description": "Recognized for outstanding contributions to frontend development and mentoring."
+  },
+  {
+    "id": "2",
+    "title": "AWS Certified Developer",
+    "type": "certification",
+    "organization": "Amazon Web Services",
+    "period": "2022",
+    "description": "Professional certification for AWS cloud development and deployment."
+  },
+  {
+    "id": "3",
+    "title": "React Advanced Patterns",
+    "type": "course",
+    "organization": "Frontend Masters",
+    "period": "2023",
+    "description": "Completed advanced React patterns and performance optimization course."
+  },
+  {
+    "id": "4",
+    "title": "UI/UX Design Specialization",
+    "type": "certification",
+    "organization": "Coursera",
+    "period": "2021",
+    "description": "Comprehensive certification covering user research, prototyping, and visual design."
+  },
+  {
+    "id": "5",
+    "title": "Hackathon Winner - Best Design",
+    "type": "award",
+    "organization": "Seoul Startup Week",
+    "period": "2022",
+    "description": "Won first place for best user interface design in a 48-hour hackathon."
+  },
+  {
+    "id": "6",
+    "title": "TypeScript Deep Dive",
+    "type": "course",
+    "organization": "Udemy",
+    "period": "2021",
+    "description": "Mastered advanced TypeScript concepts and type system."
+  }
+]

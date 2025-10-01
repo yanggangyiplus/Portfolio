@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "title": "E-Commerce Platform",
+    "description": "A modern e-commerce platform with advanced filtering, shopping cart, and checkout functionality. Built with React, TypeScript, and integrated with Stripe for payments.",
+    "image": "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+    "tags": ["React", "TypeScript", "Tailwind", "Stripe"],
+    "techStack": ["React", "TypeScript", "Node.js", "PostgreSQL", "Stripe API"],
+    "contributions": [
+      "Architected the frontend application structure",
+      "Implemented product filtering and search functionality",
+      "Integrated Stripe payment gateway"
+    ],
+    "results": "Increased conversion rate by 35% and reduced cart abandonment by 20%",
+    "liveUrl": "https://example.com",
+    "githubUrl": "https://github.com/yourusername/project"
+  },
+  {
+    "id": "2",
+    "title": "Task Management App",
+    "description": "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
+    "tags": ["React", "Firebase", "Realtime"],
+    "techStack": ["React", "TypeScript", "Firebase", "Material-UI"],
+    "contributions": [
+      "Developed drag-and-drop task board interface",
+      "Implemented real-time collaboration using Firebase",
+      "Created responsive design for mobile and desktop"
+    ],
+    "results": "Used by 500+ teams, 4.8/5 average rating",
+    "liveUrl": "https://example.com",
+    "githubUrl": "https://github.com/yourusername/project"
+  },
+  {
+    "id": "3",
+    "title": "Personal Blog Platform",
+    "description": "A minimalist blog platform with markdown support, syntax highlighting, and SEO optimization. Features a clean reading experience and author dashboard.",
+    "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop",
+    "tags": ["Next.js", "MDX", "SEO"],
+    "techStack": ["Next.js", "TypeScript", "MDX", "Tailwind CSS"],
+    "contributions": [
+      "Built static site generation for optimal performance",
+      "Implemented markdown editor with live preview",
+      "Optimized for SEO and accessibility"
+    ],
+    "results": "Achieved 98/100 Lighthouse score, 10k+ monthly readers",
+    "liveUrl": "https://example.com",
+    "githubUrl": "https://github.com/yourusername/project"
+  },
+  {
+    "id": "4",
+    "title": "Weather Dashboard",
+    "description": "A beautiful weather dashboard with location-based forecasts, interactive maps, and historical weather data visualization.",
+    "image": "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop",
+    "tags": ["React", "API", "Charts"],
+    "techStack": ["React", "TypeScript", "Chart.js", "OpenWeather API"],
+    "contributions": [
+      "Integrated multiple weather APIs",
+      "Created interactive weather data visualizations",
+      "Implemented geolocation features"
+    ],
+    "results": "50k+ downloads, featured on Product Hunt",
+    "liveUrl": "https://example.com",
+    "githubUrl": "https://github.com/yourusername/project"
+  }
+]
