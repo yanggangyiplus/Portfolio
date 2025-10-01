@@ -73,9 +73,10 @@ This project is built with:
 ### 배포 옵션
 
 1. **GitHub Pages** (무료, 추천)
-   - GitHub 저장소 Settings → Pages에서 "GitHub Actions" 선택
-   - main 브랜치에 push하면 자동 배포
-   - `deploy-basic.yml` 워크플로우 사용
+   - GitHub 저장소 Settings → Pages에서 "Deploy from a branch" 선택
+   - gh-pages 브랜치를 소스로 설정
+   - main 브랜치에 push하면 자동으로 gh-pages 브랜치에 배포
+   - `deploy-gh-pages.yml` 워크플로우 사용
 
 2. **Vercel** (무료, 빠른 배포)
    - Vercel 계정 생성 후 GitHub 저장소 연결
