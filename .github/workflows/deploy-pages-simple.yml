@@ -1,0 +1,68 @@
+name: Deploy to GitHub Pages (Simple)
+
+# main 브랜치에 push될 때 실행
+on:
+  push:
+    branches: [ main ]
+
+# 작업 권한 설정
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 동시 배포 방지
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # 빌드 및 배포
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+    - name: Checkout 코드
+      uses: actions/checkout@v4
+      
+    - name: Node.js 설정
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: 의존성 설치
+      run: npm ci
+      
+    - name: 프로덕션 빌드
+      run: npm run build
+      
+    - name: 빌드 결과물 정리
+      run: |
+        # 심볼릭 링크나 하드 링크 제거
+        find dist -type l -delete 2>/dev/null || true
+        # 빈 디렉토리 제거
+        find dist -type d -empty -delete 2>/dev/null || true
+        # 파일 정보 출력
+        echo "=== 빌드 결과물 정보 ==="
+        du -sh dist/
+        ls -la dist/
+        echo "=== 파일 개수 ==="
+        find dist -type f | wc -l
+        
+    - name: 빌드 결과물을 아티팩트로 업로드
+      uses: actions/upload-artifact@v4
+      with:
+        name: github-pages
+        path: dist/
+        retention-days: 1
+        
+    - name: GitHub Pages 배포
+      id: deployment
+      uses: actions/deploy-pages@v4
+      with:
+        artifact_name: github-pages

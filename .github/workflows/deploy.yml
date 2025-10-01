@@ -1,11 +1,9 @@
-name: Deploy Portfolio
+name: Deploy Portfolio (Disabled)
 
+# 이 워크플로우는 비활성화되었습니다. deploy-pages-simple.yml을 사용하세요.
 # main 브랜치에 push되거나 PR이 merge될 때 실행
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch: # 수동 실행만 가능
 
 # 작업 권한 설정
 permissions:
@@ -42,6 +40,16 @@ jobs:
     - name: 프로덕션 빌드
       run: npm run build
       
+    - name: 빌드 결과물 정리
+      run: |
+        # 심볼릭 링크나 하드 링크 제거
+        find dist -type l -delete 2>/dev/null || true
+        # 빈 디렉토리 제거
+        find dist -type d -empty -delete 2>/dev/null || true
+        # 파일 크기 확인
+        du -sh dist/
+        ls -la dist/
+      
     - name: 빌드 결과물 업로드
       uses: actions/upload-artifact@v4
       with:
@@ -69,9 +77,16 @@ jobs:
         name: dist
         path: dist/
         
+    - name: 배포 전 검증
+      run: |
+        # 다운로드된 파일 확인
+        ls -la dist/
+        du -sh dist/
+        # 심볼릭 링크 확인
+        find dist -type l 2>/dev/null || echo "No symbolic links found"
+        
     - name: GitHub Pages 배포
       id: deployment
       uses: actions/deploy-pages@v4
       with:
         artifact_name: dist
-        enablement: true
