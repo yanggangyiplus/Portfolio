@@ -77,6 +77,7 @@ This project is built with:
    - gh-pages 브랜치를 소스로 설정
    - main 브랜치에 push하면 자동으로 gh-pages 브랜치에 배포
    - `deploy-gh-pages.yml` 워크플로우 사용
+   - **설정 가이드**: [GITHUB_PAGES_SETUP.md](./GITHUB_PAGES_SETUP.md) 참고
 
 2. **Vercel** (무료, 빠른 배포)
    - Vercel 계정 생성 후 GitHub 저장소 연결

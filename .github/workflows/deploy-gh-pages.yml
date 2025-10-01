@@ -28,6 +28,14 @@ jobs:
       env:
         GITHUB_REPOSITORY: ${{ github.repository }}
       
+    - name: Check build output
+      run: |
+        echo "=== 빌드 결과물 확인 ==="
+        ls -la dist/
+        echo "=== 파일 개수 ==="
+        find dist -type f | wc -l
+        echo "=== 빌드 완료 ==="
+      
     - name: Deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
       with:
