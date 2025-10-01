@@ -24,7 +24,15 @@ jobs:
       run: npm ci
       
     - name: Build
-      run: npm run build
+      run: |
+        echo "=== 빌드 시작 ==="
+        echo "Repository: ${{ github.repository }}"
+        echo "Node version: $(node --version)"
+        echo "NPM version: $(npm --version)"
+        echo "=== 의존성 확인 ==="
+        npm list --depth=0
+        echo "=== 빌드 실행 ==="
+        npm run build
       env:
         GITHUB_REPOSITORY: ${{ github.repository }}
       
