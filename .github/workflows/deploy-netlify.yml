@@ -1,9 +1,8 @@
-name: Deploy to Netlify
+name: Deploy to Netlify - Disabled
 
-# main 브랜치에 push될 때 실행
+# 이 워크플로우는 비활성화되었습니다. 필요시 수동으로 활성화하세요.
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch: # 수동 실행만 가능
 
 jobs:
   # Netlify 배포
@@ -22,9 +21,6 @@ jobs:
         
     - name: 의존성 설치
       run: npm ci
-      
-    - name: 린트 검사
-      run: npm run lint || echo "Lint warnings found, but continuing build"
       
     - name: 프로덕션 빌드
       run: npm run build

@@ -26,10 +26,13 @@
 
 ### 3. 배포 워크플로우
 
-현재 두 가지 배포 워크플로우가 있습니다:
+현재 배포 워크플로우 상태:
 
-- **`deploy-pages-simple.yml`** (추천): 간단하고 안정적인 배포
+- **`deploy-basic.yml`** (활성화, 추천): 가장 기본적이고 안정적인 배포
+- **`deploy-pages-simple.yml`** (비활성화): 이전 버전
 - **`deploy.yml`** (비활성화): 복잡한 배포 (문제 발생 시 비활성화됨)
+- **`deploy-vercel.yml`** (비활성화): Vercel 배포 (필요시 수동 활성화)
+- **`deploy-netlify.yml`** (비활성화): Netlify 배포 (필요시 수동 활성화)
 
 ### 4. 문제 해결
 

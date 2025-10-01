@@ -1,9 +1,8 @@
-name: Deploy to GitHub Pages (Simple)
+name: Deploy to GitHub Pages (Simple) - Disabled
 
-# main 브랜치에 push될 때 실행
+# 이 워크플로우는 비활성화되었습니다. deploy-basic.yml을 사용하세요.
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch: # 수동 실행만 가능
 
 # 작업 권한 설정
 permissions:
@@ -41,15 +40,9 @@ jobs:
     - name: 프로덕션 빌드
       run: npm run build
       
-    - name: 빌드 결과물 정리
+    - name: 빌드 결과물 확인
       run: |
-        # 심볼릭 링크나 하드 링크 제거
-        find dist -type l -delete 2>/dev/null || true
-        # 빈 디렉토리 제거
-        find dist -type d -empty -delete 2>/dev/null || true
-        # 파일 정보 출력
         echo "=== 빌드 결과물 정보 ==="
-        du -sh dist/
         ls -la dist/
         echo "=== 파일 개수 ==="
         find dist -type f | wc -l

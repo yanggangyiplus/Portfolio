@@ -16,18 +16,9 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // 빌드 최적화 설정
+    // 기본 빌드 설정
     outDir: "dist",
     assetsDir: "assets",
     sourcemap: false,
-    minify: "terser",
-    rollupOptions: {
-      output: {
-        // 청크 파일명 최적화
-        chunkFileNames: "assets/[name]-[hash].js",
-        entryFileNames: "assets/[name]-[hash].js",
-        assetFileNames: "assets/[name]-[hash].[ext]",
-      },
-    },
   },
 }));
