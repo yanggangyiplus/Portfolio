@@ -58,10 +58,11 @@
 - GitHub Actions는 성공했지만 사이트에서 404 오류가 발생하는 경우
 - React Router의 BrowserRouter를 사용하는 SPA(Single Page Application)에서 발생하는 일반적인 문제
 - 해결 방법:
-  1. `public/_redirects` 파일이 생성되어 모든 경로를 `index.html`로 리다이렉트
-  2. `public/404.html` 파일이 생성되어 GitHub Pages에서 SPA 라우팅 지원
-  3. `index.html`에 SPA 라우팅을 위한 스크립트 추가
+  1. `public/404.html` 파일이 생성되어 GitHub Pages에서 SPA 라우팅 지원
+  2. `index.html`에 SPA 라우팅을 위한 스크립트 추가
+  3. React 앱에 `RedirectHandler` 컴포넌트 추가하여 sessionStorage 리다이렉트 처리
   4. Vite 설정에서 GitHub Pages용 base URL 설정
+  5. GitHub Pages는 `_redirects` 파일을 지원하지 않으므로 404.html 방식 사용
 
 ## 🌐 Vercel 배포
 
