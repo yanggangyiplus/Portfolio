@@ -14,13 +14,15 @@ const RedirectHandler = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // sessionStorage에서 리다이렉트 URL 확인
-    const redirect = sessionStorage.redirect;
-    if (redirect) {
-      sessionStorage.removeItem('redirect');
-      // 상대 경로로 변환하여 네비게이션
-      const url = new URL(redirect);
-      navigate(url.pathname + url.search + url.hash);
+    // GitHub Pages SPA 라우팅 처리
+    const l = window.location;
+    if (l.search[1] === '/') {
+      const decoded = l.search.slice(1).split('&').map(function (s) {
+        return s.replace(/~and~/g, '&')
+      }).join('?');
+      window.history.replaceState(null, null,
+        l.pathname.slice(0, -1) + decoded + l.hash
+      );
     }
   }, [navigate]);
 
