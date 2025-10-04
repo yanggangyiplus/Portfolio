@@ -1,13 +1,22 @@
-name: Deploy to GitHub Pages (gh-pages branch)
+name: Deploy to GitHub Pages (GitHub Actions)
 
 on:
-  workflow_dispatch: # 수동 실행만 가능 (GitHub Actions Pages 배포로 변경)
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -42,10 +51,19 @@ jobs:
         echo "=== 파일 개수 ==="
         find dist -type f | wc -l
         echo "=== 빌드 완료 ==="
-      
-    - name: Deploy to gh-pages
-      uses: peaceiris/actions-gh-pages@v3
+        
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
-        cname: # 커스텀 도메인이 있다면 여기에 입력
+        path: ./dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
