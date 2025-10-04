@@ -1,7 +1,8 @@
 name: Deploy to GitHub Pages (gh-pages branch)
 
 on:
-  workflow_dispatch: # 수동 실행만 가능 (GitHub Actions Pages 배포로 변경)
+  push:
+    branches: [ main ]
 
 permissions:
   contents: write
