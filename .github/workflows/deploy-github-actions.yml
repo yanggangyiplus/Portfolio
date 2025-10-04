@@ -51,12 +51,15 @@ jobs:
         ls -la dist/
         echo "=== 파일 개수 ==="
         find dist -type f | wc -l
+        echo "=== index.html 확인 ==="
+        cat dist/index.html | head -20
         echo "=== 빌드 완료 ==="
         
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
         path: ./dist
+        retention-days: 1
 
   deploy:
     environment:
