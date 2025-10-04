@@ -1,7 +1,10 @@
 name: Deploy to GitHub Pages (GitHub Actions)
 
 on:
-  workflow_dispatch: # 수동 실행만 가능 (gh-pages 브랜치 방식으로 변경)
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -39,7 +42,8 @@ jobs:
         echo "=== 빌드 실행 ==="
         npm run build
       env:
-        GITHUB_REPOSITORY: ${{ github.repository }}
+        NODE_ENV: production
+        VITE_BASE_URL: /Portfolio/
       
     - name: Check build output
       run: |
